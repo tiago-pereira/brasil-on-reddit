@@ -24,11 +24,13 @@ def process_submission(reddit, submission):
 
 
     new_post_title = xpost + title
-    if len(new_post_title) > 300:
-        new_post_title = new_post_title[0:297] + '...'
+
+    if len(new_post_title) > 293: # if title is greater than 300 (title limit) minus NSFW flag (7)
+        new_post_title = new_post_title[0:290] + '...' # substring 290 chars and add ellipsis, leaving NSFW space
 
     if submission.over_18:
         new_post_title += ' | NSFW'
+
     new_post_url = url
     post_to = reddit.subreddit(SUBREDDIT_TO_POST)
 
