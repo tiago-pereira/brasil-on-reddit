@@ -18,5 +18,10 @@ SEARCH_LIMIT = 8000
 # Wait time between runs (in minutes)
 WAIT_TIME = 15
 
+# Post mode (choose 'direct' or 'comment')
+# 'direct' will make the bot post the direct link of the source submission
+# 'comment' will make the bot post the link to the comment section of the source submission
+POST_MODE = 'comment'
+
 # Required score to cross-post a submission found by search when setting up your subreddit
 REQUIRED_SCORE = 500
