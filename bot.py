@@ -24,7 +24,7 @@ def process_submission(reddit, submission):
 
 
     new_post_title = xpost + title
-    if len(new_post_title) > 300
+    if len(new_post_title) > 300:
         new_post_title = new_post_title[0:297] + '...'
 
     if submission.over_18:
