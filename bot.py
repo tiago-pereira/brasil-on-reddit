@@ -22,7 +22,11 @@ def process_submission(reddit, submission):
     xpost = "[r/{}] ".format(submission.subreddit.display_name)  # x-post string: [r/subreddit]
     source_url = 'https://www.reddit.com' + submission.permalink  # link to submission's comment section
 
-    new_post_title = (xpost + title)[0:297] + '...'
+
+    new_post_title = xpost + title
+    if len(new_post_title) > 300
+        new_post_title = new_post_title[0:297] + '...'
+
     if submission.over_18:
         new_post_title += ' | NSFW'
     new_post_url = url
