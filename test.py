@@ -5,11 +5,6 @@ from config import *
 
 class BotTest(unittest.TestCase):
     def test_monitor(self):
-        SUBMISSIONS_SAMPLE = [
-                'Thats a sample test for donna brazile',
-                'thats a sample for brazile trump'
-                ]
-
         self.try_sample('thats a sample', 0)
         self.try_sample('thats a brazil sample', 1)
         self.try_sample('thats a donna brazile sample', 0)
