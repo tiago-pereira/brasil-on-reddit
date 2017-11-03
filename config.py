@@ -16,7 +16,7 @@ SUBREDDITS_TO_MONITOR = 'all-BrasilOnReddit-brasil-a7arte-AJS_BR-Ajuda-AjudaBras
 SEARCH_LIMIT = 8000
 
 # Blacklist, disconsider posts that contains all of the words of a index
-BLACKLIST = ['donna-brazile', 'brazile-trump']
+BLACKLIST = ['donna-brazile', 'brazile-trump', 'brazile-hillary']
 
 # Wait time between runs (in minutes)
 WAIT_TIME = 15
