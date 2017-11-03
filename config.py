@@ -15,6 +15,9 @@ SUBREDDITS_TO_MONITOR = 'all-BrasilOnReddit-brasil-a7arte-AJS_BR-Ajuda-AjudaBras
 # Number of submissions to check in each run
 SEARCH_LIMIT = 8000
 
+# Blacklist, disconsider posts that contains all of the words of a index
+BLACKLIST = ['donna-brazile', 'brazile-trump']
+
 # Wait time between runs (in minutes)
 WAIT_TIME = 15
 
