@@ -50,18 +50,31 @@ def new_post(subreddit, title, url, source_url):
     else:
         logging.ERROR('Invalid POST_MODE chosen. Select "direct" or "comment".')
 
+def is_blacklisted(title):
+    is_black = False
+
+    for ignored in BLACKLIST:
+        ignored_words = ignored.split('-')
+
+        if(all(word in title for word in ignored_words)):
+            is_black = True
+
+    return is_black
 
 def monitor(reddit, submissions_found):
     counter = 0
     for submission in reddit.subreddit(SUBREDDITS_TO_MONITOR).hot(limit=SEARCH_LIMIT):
         for expression in EXPRESSIONS_TO_MONITOR:
             if expression in submission.title.lower() and submission.id not in submissions_found:
-                process_submission(reddit, submission)
-                submissions_found.append(submission.id)
-                counter += 1
+                ignore_submission = is_blacklisted(submission.title.lower())
 
-                with open('submissions_processed.txt', 'a') as f:
-                    f.write(submission.id + '\n')
+                if not ignore_submission:
+                    process_submission(reddit, submission)
+                    submissions_found.append(submission.id)
+                    counter += 1
+
+                    with open('submissions_processed.txt', 'a') as f:
+                        f.write(submission.id + '\n')
 
     logging.info(str(counter) + ' submission(s) found')  # log results
 
