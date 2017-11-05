@@ -56,7 +56,7 @@ def is_blacklisted(title):
     for ignored in BLACKLIST:
         ignored_words = ignored.split('-')
 
-        if(all(word in title for word in ignored_words)):
+        if all(word in title for word in ignored_words):
             is_black = True
 
     return is_black

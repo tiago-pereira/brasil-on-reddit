@@ -12,6 +12,9 @@ class BotTest(unittest.TestCase):
         self.try_sample('thats a donna trump sample', 0)
         self.try_sample('isso eh um post qualquer sobre o brasil', 0)
         self.try_sample('brazile bullshit stuff trump', 1)
+        self.try_sample('brazile bullshit', 1)
+        self.try_sample('brazille bullshit', 1)
+        self.try_sample('brasile bullshit', 1)
 
 
     def try_sample(self, sample, expect):
